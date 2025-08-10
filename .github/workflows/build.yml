@@ -1,0 +1,25 @@
+name: TWRP build (placeholder)
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'recovery/**'
+      - 'device/**'
+      - '.github/workflows/**'
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Show repo contents
+        run: |
+          echo "Files in repository root:"
+          ls -la
+
+      - name: Note about missing inputs
+        run: |
+          echo "This workflow is a placeholder. To build recovery you will later need to provide kernel sources and/or vendor blobs and possibly a larger build manifest."
